@@ -21,7 +21,7 @@ collection = db.items
 @app.route("/")
 def home():
     #find items within mars_db
-    items=mongo.db.collection.find()
+    items=db.items.find()
     for item in items:
         print(item)
     #render data
