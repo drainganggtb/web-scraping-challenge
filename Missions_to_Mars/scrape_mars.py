@@ -9,6 +9,9 @@ def scrape():
     executable_path = {'executable_path': r"C:\chromedriver"}
     browser = Browser('chrome', **executable_path, headless=False)
 
+    #set up dictionary
+    mars_info={}
+
     #All of these sites must be scraped
     news_url = 'https://mars.nasa.gov/news/'
     image_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
@@ -30,6 +33,9 @@ def scrape():
     news_title = titles[1].text
     news_p=p_elements[0].text
 
+    mars_info['news_title']=news_title
+    mars_info['news_p']=news_p
+
     #tell splinter to visit image url for IMAGE
     browser.visit(image_url)
     time.sleep(5)
@@ -43,13 +49,22 @@ def scrape():
     # Display url of the full image
     featured_image_url = f"https://www.jpl.nasa.gov{featured_image}"
 
+    mars_info['featured_image_url']=featured_image_url
+
     # use pandas to scrape and create df for FACTS
     fact_list = pd.read_html(facts_url)
     #navigate to desired table and create df
-    fact_df = fact_list[0].rename(columns={0:"Descriptor", 1: "Mars"})
+    fact_df = fact_list[0].rename(columns={0:"Descriptor", 1: "Value"})
+    #set index
+    fact_df.set_index("Descriptor", inplace=True)
 
     #save df into html table format
     mars_html_facts = fact_df.to_html()
+
+    #remove unwatned new lines
+    mars_html_facts.replace('\n','')
+
+    mars_info['mars_facts']=mars_html_facts
 
     #use splinter to visit HEMISPHERES site
     browser.visit(hemispheres_url)
@@ -91,11 +106,9 @@ def scrape():
         #append links to list in python dictionary form
         hemisphere_image_url.append({"title":item_name, "img_url":item_image})
 
-        #create dictionary by adding onto hemisphere dictionary
-        mars_info = hemisphere_image_url.append({"Headline": news_title,
-                                    "Text": news_p,
-                                    "FeaturedImage": featured_image_url,
-                                    "FactTable": mars_html_facts})
+        #add more to dict
+        mars_info['hemispheres_info']=hemisphere_image_url
+
     
     browser.quit()
 
