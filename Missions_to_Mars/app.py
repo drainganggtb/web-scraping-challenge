@@ -8,7 +8,13 @@ import pymongo
 app = Flask(__name__)
 
 # Initialize PyMongo
-mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_db")
+# Initialize PyMongo to work with MongoDBs
+conn = 'mongodb://localhost:27017'
+client = pymongo.MongoClient(conn)
+# Define database and collection
+db = client.mars_app_db
+collection = db.items
+
 
 
 #first route corresponds to getting data from MongoDB
@@ -26,10 +32,7 @@ def home():
 def app_scrape():
     #drop collection if present
     collection.drop()
-    mars_data = scrape_mars.scrape_info()
-
-    #update collection
-    mongo.db.collection.update({}, mars_data, upsert=True)
+    collection.insert_one(scrape())
     
     #redirect to home page
     return redirect ("/")
