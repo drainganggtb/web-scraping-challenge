@@ -8,28 +8,28 @@ import pymongo
 app = Flask(__name__)
 
 # Initialize PyMongo
-conn = 'mongodb://localhost:27017'
-client = pymongo.MongoClient(conn)
-# Define database and collection
-db = client.mars_db
-collection = db.items
+mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_db")
+
 
 #first route corresponds to getting data from MongoDB
 @app.route("/")
 def home():
     #find items within mars_db
-    items=db.items.find()
+    items=mongo.db.collection.find()
     for item in items:
         print(item)
     #render data
-    return render_template("index.html", dict=collection)
+    return render_template("index.html", mars_mongo=items)
 
 #route will trigger scraping function
 @app.route("/scrape")
 def app_scrape():
     #drop collection if present
     collection.drop()
-    collection.insert_one(scrape())
+    mars_data = scrape_mars.scrape_info()
+
+    #update collection
+    mongo.db.collection.update({}, mars_data, upsert=True)
     
     #redirect to home page
     return redirect ("/")
