@@ -90,16 +90,16 @@ def scrape():
         item_image=hemisphere_base_url+souplink.find('img',class_="wide-image")['src']
         #append links to list in python dictionary form
         hemisphere_image_url.append({"title":item_name, "img_url":item_image})
+
+        #create dictionary by adding onto hemisphere dictionary
+        mars_info = hemisphere_image_url.append({"Headline": news_title,
+                                    "Text": news_p,
+                                    "FeaturedImage": featured_image_url,
+                                    "FactTable": mars_html_facts})
     
     browser.quit()
 
-    #create dictionary of scraped items
-    scrape_dict={"Headline": news_title,
-    "Text": news_p,
-    "Featured Image": featured_image_url,
-    "Fact Table": mars_html_facts,
-    "Hemisphere Images":hemisphere_image_url}
-    return scrape_dict
+    return mars_info
 
 
 
