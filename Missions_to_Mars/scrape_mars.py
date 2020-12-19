@@ -64,6 +64,7 @@ def scrape():
     #remove unwatned new lines
     mars_html_facts.replace('\n','')
 
+    #add to dict
     mars_info['mars_facts']=mars_html_facts
 
     #use splinter to visit HEMISPHERES site
