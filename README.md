@@ -1,7 +1,8 @@
 # web-scraping-challenge
 In this assignment, you will build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page
-Many programs were utilized in order to scrape and render outputs, like **Flask**, **MongoDB**, **Jupyter Notebook**, **Python**, **Pandas**, **HTML/CSS**, **BeautifulSoup**, and **Splinter**.
 
+Many programs were utilized in order to scrape and render outputs, like **Flask**, **MongoDB**, **Jupyter Notebook**, **Python**, **Pandas**, **HTML/CSS**, **BeautifulSoup**, and **Splinter**.
+[marsimg](https://geneticliteracyproject.org/wp-content/uploads/2017/11/mars-2.jpg)
 ## Navigating this repository
 Contained in the *Missions_to_Mars* folder is all the code used to complete this assignment, including:
 
@@ -35,3 +36,15 @@ The [Mars facts website](https://space-facts.com/mars/) was scraped to obtain a 
 - The image url string for the full resolution image and hemisphere title were stored in Python dictionary/key word pairs using the keys ```img_url``` and ```title```.
 
 # Step 2: MongoDB and Flask Application
+MongoDB with Flask was used to create a new HTML page that displays all the previously scraped information from the URLs above. 
+- This process began by converting the Jupyter notebook into a python script called ```scrape_mars.py``` with a function called ```scrape``` that will execute all of the scraping code and return one Python dictionary containing all of the scraped data.
+- Next, the ```/scrape``` route was made within ```app.py``` to import ```scrape_mars.py``` and call the ```scrape``` function.
+    - The return value was stored in Mongo as a Python dictionary
+    - It was necessary to overwrite the existing document each time the ```/scrape``` url is visited and new data is obtained. 
+- The root route ```/``` will query the Mongo database and pass the Mars data into an HTML template to display the data.
+- The template file, ```index.html```, takes the dictionary and displays it in appropriate HTML elements. 
+
+The following images show the output of the Flask app when run.
+
+[first](https://github.com/drainganggtb/web-scraping-challenge/blob/main/Missions_to_Mars/images/homepage.png)
+[second](https://github.com/drainganggtb/web-scraping-challenge/blob/main/Missions_to_Mars/images/hemi_img.png)
