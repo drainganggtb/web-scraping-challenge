@@ -17,14 +17,13 @@ The scraping process utilized Jupyter Notebook, BeautifulSoup, Pandas, Requests,
 #### NASA Mars News
  The [Nasa Mars News site](https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest) was scraped to collect the latest news title and paragraph text, which were assigned to referenceable variables
  ```
- #example:
  news_title = "NASA's Next Mars Mission to Investigate Interior of the Red Planet"
  news_p = "Preparation of NASA's next spacecraft to Mars, InSight, has ramped up this summer, on course for launch next May"
  ```
 
 #### JPL Mars Space Images Featured Image
 Next, the [JPL Featured Space Image](https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars) was navigated to and scraped. The image url was assigned to a variable called ```featured_image_url```. Care was taken in order to get the full-size ```.jpg``` image. 
-```# Example:
+```
 featured_image_url = 'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA16225_hires.jpg'
 ```
 #### Mars Facts
