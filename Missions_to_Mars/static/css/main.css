@@ -28,6 +28,7 @@ body {
 }
 #hemicont {
     border: 1px solid grey;
+    margin-bottom: 50px;
 }
 p{
     font-size: 15pt;
