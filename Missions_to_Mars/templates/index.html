@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mars Mission</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+  <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
     <div class="container">
@@ -31,10 +31,12 @@
       <div class="container" id="cont-img">
           <div class="row">
               <div class="col-md-7">
+                  <h2><strong>Featured Mars Image</strong></h2>
                   <img src="{{ image }}" alt="Mars_Image" style="width:660px;height:460px;"> 
               </div>
               <div class="col-md-5">
-                {{table |safe}}
+                <h4>Mars Quick Facts</h4>
+                <div id="facts_table">{{table |safe}}</div>
               </div>
           </div>
       </div>
