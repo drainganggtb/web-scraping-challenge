@@ -1,5 +1,5 @@
 # web-scraping-challenge
-In this assignment, you will build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page
+In this assignment, a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page was created.
 
 Many programs were utilized in order to scrape and render outputs, like **Flask**, **MongoDB**, **Jupyter Notebook**, **Python**, **Pandas**, **HTML/CSS**, **BeautifulSoup**, and **Splinter**.
 ![marsimg](https://geneticliteracyproject.org/wp-content/uploads/2017/11/mars-2.jpg)
@@ -14,9 +14,9 @@ Contained in the *Missions_to_Mars* folder is all the code used to complete this
 The scraping process utilized Jupyter Notebook, BeautifulSoup, Pandas, Requests, and Splinter. <a href="https://github.com/drainganggtb/web-scraping-challenge/blob/main/Missions_to_Mars/mission_to_mars.ipynb" target="_blank">mission_to_mars.ipynb</a>
  contains all of the scraping work and Pandas data frames which were created in the process.
 
-### The sites which were scraped were:
+### The following sites were scraped:
 #### NASA Mars News
- The [Nasa Mars News site](https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest) was scraped to collect the latest news title and paragraph text, which were assigned to referenceable variables
+ The [Nasa Mars News site](https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest) was scraped to collect the latest news title and paragraph text, which were assigned to referenceable variables.
  ```
  news_title = "NASA's Next Mars Mission to Investigate Interior of the Red Planet"
  news_p = "Preparation of NASA's next spacecraft to Mars, InSight, has ramped up this summer, on course for launch next May"
@@ -46,5 +46,5 @@ MongoDB with Flask was used to create a new HTML page that displays all the prev
 
 The following images show the output of the Flask app when run.
 
-[first](https://github.com/drainganggtb/web-scraping-challenge/blob/main/Missions_to_Mars/images/homepage.png)
-[second](https://github.com/drainganggtb/web-scraping-challenge/blob/main/Missions_to_Mars/images/hemi_img.png)
+![first](https://github.com/drainganggtb/web-scraping-challenge/blob/main/Missions_to_Mars/images/homepage.png)
+![second](https://github.com/drainganggtb/web-scraping-challenge/blob/main/Missions_to_Mars/images/hemi_img.png)
