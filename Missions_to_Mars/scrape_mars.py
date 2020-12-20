@@ -1,9 +1,11 @@
-def scrape():
-    from splinter import Browser
-    from bs4 import BeautifulSoup as bs
-    import pandas as pd
-    import time
+from splinter import Browser
+from bs4 import BeautifulSoup as bs
+import pandas as pd
+import time
 
+
+def scrape():
+    
     #splinter setup
     #Insert splinter path to chromedriver
     executable_path = {'executable_path': r"C:\chromedriver"}

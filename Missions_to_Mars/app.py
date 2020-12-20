@@ -25,7 +25,7 @@ def home():
     for item in items:
         print(item)
     #render data
-    return render_template("index.html", mars_mongo=items)
+    return render_template("index.html", headline=item['news_title'], text=item['news_p'], table=item['mars_facts'], image=item['featured_image_url'], hem_img=item['hemispheres_info'])
 
 #route will trigger scraping function
 @app.route("/scrape")
