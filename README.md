@@ -10,7 +10,8 @@ Contained in the *Missions_to_Mars* folder is all the code used to complete this
 - HTML/CSS files for the Flask page contained in the *templates* and *static* folders
 
 # Step 1: Scraping
-The scraping process utilized Jupyter Notebook, BeautifulSoup, Pandas, Requests, and Splinter. [mission_to_mars.ipynb](https://github.com/drainganggtb/web-scraping-challenge/blob/main/Missions_to_Mars/mission_to_mars.ipynb) contains all of the scraping work and Pandas data frames which were created in the process.
+The scraping process utilized Jupyter Notebook, BeautifulSoup, Pandas, Requests, and Splinter. <a href="https://github.com/drainganggtb/web-scraping-challenge/blob/main/Missions_to_Mars/mission_to_mars.ipynb" target="_blank">mission_to_mars.ipynb</a>
+ contains all of the scraping work and Pandas data frames which were created in the process.
 
 ### The sites which were scraped were:
 #### NASA Mars News
