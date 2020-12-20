@@ -2,7 +2,7 @@
 In this assignment, you will build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page
 
 Many programs were utilized in order to scrape and render outputs, like **Flask**, **MongoDB**, **Jupyter Notebook**, **Python**, **Pandas**, **HTML/CSS**, **BeautifulSoup**, and **Splinter**.
-[marsimg](https://geneticliteracyproject.org/wp-content/uploads/2017/11/mars-2.jpg)
+![marsimg](https://geneticliteracyproject.org/wp-content/uploads/2017/11/mars-2.jpg)
 ## Navigating this repository
 Contained in the *Missions_to_Mars* folder is all the code used to complete this assignment, including:
 
