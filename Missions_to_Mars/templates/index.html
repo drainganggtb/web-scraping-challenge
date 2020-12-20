@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mars Mission</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
 </head>
 <body>
     <div class="container">
@@ -20,7 +21,7 @@
       <div class="container" id="cont-news">
           <div class="row">
               <div class="col-md-12">
-                <h2>Latest Mars News:</h2>
+                <h2><strong>Latest Mars News:</strong></h2>
                 <h3>{{ headline }}</h3>
                 <p>{{ text }}</p>
               </div>
@@ -30,13 +31,35 @@
       <div class="container" id="cont-img">
           <div class="row">
               <div class="col-md-7">
-                  <img src="{{ image }}" alt="Mars_Image">
+                  <img src="{{ image }}" alt="Mars_Image" style="width:660px;height:460px;"> 
               </div>
               <div class="col-md-5">
                 {{table |safe}}
               </div>
           </div>
       </div>
+      <!----container for hemisphere images-->
+      <h2><strong>Mars Hemispheres</strong></h2>
+      <div class="row">
+        <div class="col-lg-6">
+            <h3>{{hem_img[0]["title"]}}</h3>
+            <img src={{ hem_img[0].img_url }} class="hemisphericos">
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>{{hem_img[1]["title"]}}</h3>
+                <img src={{ hem_img[1].img_url }} class="hemisphericos">
+            </div>
+            <div class="row">
+        <div class="col-lg-6">
+            <h3>{{hem_img[2]["title"]}}</h3>
+            <img src={{ hem_img[2].img_url }} class="hemisphericos">
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>{{hem_img[2]["title"]}}</h3>
+                <img src={{ hem_img[2].img_url }} class="hemisphericos">
+            </div>
 
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

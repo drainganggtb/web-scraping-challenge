@@ -56,9 +56,8 @@ def scrape():
     # use pandas to scrape and create df for FACTS
     fact_list = pd.read_html(facts_url)
     #navigate to desired table and create df
-    fact_df = fact_list[0].rename(columns={0:"Descriptor", 1: "Value"})
-    #set index
-    fact_df.set_index("Descriptor", inplace=True)
+    fact_df = fact_list[0].rename(columns={0:"Descriptor", 1: "Mars"})
+    fact_df.set_index('Descriptor', inplace=True)
 
     #save df into html table format
     mars_html_facts = fact_df.to_html()
